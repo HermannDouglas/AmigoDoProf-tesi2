@@ -9,3 +9,14 @@ class Turma(models.Model):
     def __str__(self):
         return self.nome
 
+class Aluno(models.Model):
+
+    nome = models.CharField('Nome', max_length=100)
+
+    turma = models.ForeignKey(Turma, on_delete=models.CASCADE)
+
+    numero_chamada = models.IntegerField('Número chamada: ', max_length=99)
+
+    def __str__(self):
+
+        return "{} {}".format(self.numero_chamada, self.nome)

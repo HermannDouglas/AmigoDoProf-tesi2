@@ -3,19 +3,18 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Turma</title>
-     {% bootstrap_css %}
+    <title>Aluno</title>
+    {% bootstrap_css %}
 </head>
 <body>
-    <h1>Página turma</h1>
-
+    <h1>Página aluno</h1>
     {% bootstrap_messages %}
-    <form method="post" action="{% url 'turma' %}" class="form" autocomplete="off">
+    <form method="post" action="{% url 'aluno' %}" class="form" autocomplete="off">
         {% csrf_token %}
         {% bootstrap_form form %}
         {% buttons %}
             <button type="submit" class="btn btn-primary">
-                Cadastrar Turma
+                Cadastrar Aluno
             </button>
         {% endbuttons %}
 

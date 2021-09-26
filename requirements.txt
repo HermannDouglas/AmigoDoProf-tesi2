@@ -1,5 +1,6 @@
 asgiref==3.4.1
 beautifulsoup4==4.10.0
+bootstrap4==0.1.0
 Django==3.2.7
 django-bootstrap4==3.0.1
 pytz==2021.1
