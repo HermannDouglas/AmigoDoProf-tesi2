@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render
-from app1.forms import AlunoModelForm, TurmaModelForm
+from app1.forms import AlunoModelForm, TurmaModelForm, FrequenciaModelForm
+
 
 # Create your views here.
 def index(request):
@@ -35,3 +36,18 @@ def aluno(request):
         'form': form
     }
     return render(request, 'aluno.html', context)
+
+def frequencia(request):
+    if request.method == 'POST':
+        form = FrequenciaModelForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Frequência salva!')
+        else:
+            messages.error(request, 'Frequência não foi salva!')
+    else:
+        form = FrequenciaModelForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'frequencia.html', context)

@@ -3,25 +3,24 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Aluno</title>
+    <title>Frequência</title>
     {% bootstrap_css %}
 </head>
 <body>
     <div class="container">
-    <h1>Página aluno</h1>
+        <h1>Página frequência</h1>
     {% bootstrap_messages %}
-    <form method="post" action="{% url 'aluno' %}" class="form" autocomplete="off">
+    <form method="post" action="{% url 'frequencia' %}" class="form" autocomplete="off">
         {% csrf_token %}
         {% bootstrap_form form %}
+
         {% buttons %}
             <button type="submit" class="btn btn-primary">
-                Cadastrar Aluno
+                Salvar
             </button>
         {% endbuttons %}
 
     </form>
     </div>
-
-{% bootstrap_javascript jquery='full' %}
 </body>
 </html>
