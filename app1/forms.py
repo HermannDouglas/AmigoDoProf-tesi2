@@ -16,3 +16,4 @@ class FrequenciaModelForm(forms.ModelForm):
     class Meta:
         model = Frequencia
         fields = ['aluno', 'presente', 'anotacao']
+

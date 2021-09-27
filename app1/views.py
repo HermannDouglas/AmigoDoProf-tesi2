@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render
 from app1.forms import AlunoModelForm, TurmaModelForm, FrequenciaModelForm
-
+from app1.models import Aluno
 
 # Create your views here.
 def index(request):
@@ -51,3 +51,9 @@ def frequencia(request):
         'form': form
     }
     return render(request, 'frequencia.html', context)
+
+def aluno_list(request):
+    context = {
+        'aluno': Aluno.objects.all()
+    }
+    return render(request, 'aluno_list.html', context)
