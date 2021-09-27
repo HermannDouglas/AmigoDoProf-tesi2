@@ -1,13 +1,13 @@
 {% load bootstrap4 %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Lista de alunos</title>
   {% bootstrap_css %}
 </head>
 <body>
-
+<div class="container">
     <table class="table">
     <thead>
     <tr>
@@ -21,7 +21,7 @@
     {% for aluno in aluno %}
       <tr>
         <th scope="row">{{aluno.id}}</th>
-        <td scope="row"><a href="#modal{{aluno.id}}"data-toggle="modal" data-target="#modal{{aluno.id}}"{{aluno.nome}}</a></td>
+        <td scope="row"><a href="#modal{{aluno.id}}"data-toggle="modal" data-target="#modal{{aluno.id}}">{{aluno.nome}}</a></td>
         <td scope="row">{{aluno.turma}}</td>
         <td scope="row">{{aluno.numero_chamada}}</td>
 
@@ -31,7 +31,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Modal title</h5>
+              <h5 class="modal-title">{{aluno.nome}}</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -42,7 +42,7 @@
             </div>
             -->
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@
 
     </tbody>
   </table>
-
+</div>
     {% bootstrap_javascript jquery='full' %}
 
 
