@@ -48,7 +48,7 @@ def frequencia(request):
     else:
         form = FrequenciaModelForm()
     context = {
-        'form': form
+        'aluno': Aluno.objects.all()
     }
     return render(request, 'frequencia.html', context)
 

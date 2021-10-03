@@ -15,5 +15,5 @@ class TurmaModelForm(forms.ModelForm):
 class FrequenciaModelForm(forms.ModelForm):
     class Meta:
         model = Frequencia
-        fields = ['aluno', 'presente', 'anotacao']
+        fields = ['aluno', 'presente']
 

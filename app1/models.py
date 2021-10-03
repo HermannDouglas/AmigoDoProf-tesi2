@@ -20,9 +20,6 @@ class Aluno(models.Model):
 class Frequencia(models.Model):
     aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
     presente = models.BooleanField('Presente ?', default=False)
-    anotacao = models.CharField('Anotação: ', max_length=300)
-
-    #aula = models.ForeignKey(Aula, on_delete=models.CASCADE())
 
     def __str__(self):
         return '{}'.format(self.presente)
