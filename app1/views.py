@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.shortcuts import render
-from app1.forms import AlunoModelForm, TurmaModelForm, FrequenciaModelForm
+from app1.forms import AlunoModelForm, AulaModelForm, TurmaModelForm, FrequenciaModelForm
 from app1.models import Aluno
 
 # Create your views here.
@@ -21,6 +21,21 @@ def turma(request):
         'form': form
     }
     return render(request, 'turma.html', context)
+
+def aula(request):
+    if request.method == 'POST':
+        form = AulaModelForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Aula salva!')
+        else:
+            messages.error(request, 'Aula não foi salva!')
+    else:
+        form = AulaModelForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'aula.html', context)
 
 def aluno(request):
     if request.method == 'POST':
@@ -48,7 +63,7 @@ def frequencia(request):
     else:
         form = FrequenciaModelForm()
     context = {
-        'aluno': Aluno.objects.all()
+        'form': form
     }
     return render(request, 'frequencia.html', context)
 
